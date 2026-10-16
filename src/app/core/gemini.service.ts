@@ -5,7 +5,7 @@ import { Q, clean } from './util';
 @Injectable({ providedIn: 'root' })
 export class Gemini {
   api = inject(Api);
-  model = 'gemini-1.5-flash'; // el 1.5-flash de la spec ya fue retirado
+  model = 'gemini-3.8-flash'; 
   get ok() { return !!this.api.key(); }
   async call(contents: any[], o: { json?: boolean; sys?: string } = {}): Promise<string> {
     if (!this.ok) throw new Error('Falta la API key de Gemini (botón "API Gemini")');
